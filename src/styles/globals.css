@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --glacier-shadow: #253B54;
+    --arctic-navy: #314A66;
+    --glacier-blue: #415C7A;
+    --steel-blue: #506A89;
+    --glacier-mid: #597594;
+    --ice-blue: #819AB8;
+    --frost-silver: #A1B6CF;
+    --glacier-white: #D0DBE9;
+    --soft-white: #F4F7FC;
+
+    --bg-void: #314A66;
+    --bg-space: #415C7A;
+    --bg-abyss: #506A89;
+    --accent-cyan: #A1B6CF;
+    --accent-cyan-glow: #D0DBE9;
+    --accent-ice: #819AB8;
+    --text-primary: #F4F7FC;
+    --text-secondary: #D0DBE9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background: radial-gradient(
+      ellipse at 50% 25%,
+      #819AB8 0%,
+      #506A89 38%,
+      #415C7A 70%,
+      #314A66 100%
+    );
+    color: var(--soft-white);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    color: var(--soft-white);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #253B54;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(161, 182, 207, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(208, 219, 233, 0.7);
+}
+
+@layer utilities {
+  /* Glacier Glassmorphism Classes */
+  .glass-panel {
+    background: rgba(49, 74, 102, 0.42);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(161, 182, 207, 0.24);
+    box-shadow: 0 12px 36px 0 rgba(37, 59, 84, 0.35);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-panel-hover:hover {
+    background: rgba(80, 106, 137, 0.55);
+    border-color: rgba(208, 219, 233, 0.45);
+    box-shadow: 0 16px 44px -8px rgba(129, 154, 184, 0.28);
+    transform: translateY(-2px);
+  }
+
+  .glass-pill {
+    background: rgba(49, 74, 102, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(161, 182, 207, 0.32);
+    color: #F4F7FC;
+  }
+
+  .glass-pill-active {
+    background: rgba(161, 182, 207, 0.22);
+    border-color: rgba(208, 219, 233, 0.65);
+    box-shadow: 0 0 20px rgba(161, 182, 207, 0.25);
+  }
+
+  /* Glacier Frost Glow Utilities */
+  .text-glow-glacier {
+    text-shadow: 0 0 24px rgba(208, 219, 233, 0.55), 0 0 8px rgba(161, 182, 207, 0.35);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 20px rgba(208, 219, 233, 0.5);
+  }
+
+  .border-glow-frost {
+    box-shadow: 0 0 20px rgba(161, 182, 207, 0.3), inset 0 0 15px rgba(208, 219, 233, 0.12);
+  }
+
+  .btn-glacier-primary {
+    background: linear-gradient(135deg, #D0DBE9 0%, #A1B6CF 100%);
+    color: #253B54;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(161, 182, 207, 0.35);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-glacier-primary:hover {
+    background: linear-gradient(135deg, #F4F7FC 0%, #D0DBE9 100%);
+    box-shadow: 0 6px 28px rgba(244, 247, 252, 0.45);
+    transform: translateY(-1px);
+  }
+}
